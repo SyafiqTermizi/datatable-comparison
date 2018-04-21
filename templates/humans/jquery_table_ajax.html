@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+    <div class="col-md-12 text-center">
+        <div class="table-responsive-md">
+            <table id="myTable" class="table table-hover bg-light text-dark">
+                <thead class="thead-dark">
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Phone</th>
+                    <th>Color</th>
+                    <th>Created At</th>
+                </tr>
+                </thead>
+            </table>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block js %}
+<script>
+$(document).ready(function() {
+    $('#myTable').DataTable({
+        ajax: {
+            url: 'http://127.0.0.1:8000/api/human',
+            dataSrc: ''
+        },
+        columns: [
+            { data: 'id'},
+            { data: 'name'},
+            { data: 'phone'},
+            { data: 'color'},
+            { data: 'created'}
+        ]
+    });
+} );
+</script>
+{% endblock %}

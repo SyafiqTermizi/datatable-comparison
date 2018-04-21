@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+    <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Human Detail</h5>
+          <hr>
+          <p class="card-text"><b>Name: </b>{{ object.name }}</p>
+          <p class="card-text"><b>Phone: </b>{{ object.phone }}</p>
+          <p class="card-text"><b>Color: </b>{{ object.color }}</p>
+          <p class="card-text"><b>Created At: </b>{{ object.created }}</p>
+          <hr>
+          <a href="#" class="btn btn-primary">Update</a>
+          <a href="#" class="btn btn-danger">Delete</a>
+        </div>
+      </div>
+</div>
+{% endblock %}
